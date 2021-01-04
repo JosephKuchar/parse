@@ -49,6 +49,8 @@ if __name__ == "__main__":
     addr_col = args.addr_col
     name_out = args.name_out
     df_in = pd.read_csv(name_in, dtype='str')
+    print('name_in: {}, address col: {}'.format(name_in, addr_col))
+    print(df_in.head())
     df_in=df_in.fillna('')
     df_out = parse_csv(df_in, addr_col)
     df_out.to_csv(name_out, index=False)
